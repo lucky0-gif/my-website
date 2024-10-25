@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 练习</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript 练习</h1>
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">HTML 教程</a></li>
+                <li><a href="../css/index.html">CSS 教程</a></li>
+                <li><a href="index.html">JavaScript 教程</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>1. 基础练习</h2>
+            <h3>1.1 练习题</h3>
+            <p>请编写一个函数 <code>add</code>，接受两个参数并返回它们的和。</p>
+            <h3>1.2 答案</h3>
+            <pre><code>function add(a, b) {
+    return a + b;
+}
+
+// 示例
+console.log(add(5, 3)); // 输出: 8</code></pre>
+        </section>
+
+        <section>
+            <h2>2. 数组练习</h2>
+            <h3>2.1 练习题</h3>
+            <p>请编写一个函数 <code>getMax</code>，接受一个数组并返回其中的最大值。</p>
+            <h3>2.2 答案</h3>
+            <pre><code>function getMax(arr) {
+    return Math.max(...arr);
+}
+
+// 示例
+console.log(getMax([1, 5, 3, 9, 2])); // 输出: 9</code></pre>
+        </section>
+
+        <section>
+            <h2>3. 对象练习</h2>
+            <h3>3.1 练习题</h3>
+            <p>请编写一个函数 <code>getFullName</code>，接受一个对象，包含 <code>firstName</code> 和 <code>lastName</code> 属性，并返回全名。</p>
+            <h3>3.2 答案</h3>
+            <pre><code>function getFullName(person) {
+    return `${person.firstName} ${person.lastName}`;
+}
+
+// 示例
+const person = { firstName: "John", lastName: "Doe" };
+console.log(getFullName(person)); // 输出: John Doe</code></pre>
+        </section>
+
+        <section>
+            <h2>4. Promise 练习</h2>
+            <h3>4.1 练习题</h3>
+            <p>请创建一个返回延迟结果的 Promise 函数 <code>delayedMessage</code>，它在 2 秒后返回 "Hello, World!"。</p>
+            <h3>4.2 答案</h3>
+            <pre><code>function delayedMessage() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Hello, World!");
+        }, 2000);
+    });
+}
+
+// 示例
+delayedMessage().then(message => console.log(message)); // 2秒后输出: Hello, World!</code></pre>
+        </section>
+
+        <section>
+            <h2>5. 扩展阅读</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide">MDN JavaScript 指南</a></li>
+                <li><a href="https://javascript.info/">JavaScript.info</a></li>
+                <li><a href="https://www.w3schools.com/js/js_exercises.asp">W3Schools JavaScript 练习</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Web Development Learning. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

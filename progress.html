@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习进度</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>学习进度</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../tutorials/html/index.html">HTML教程</a></li>
+                <li><a href="../tutorials/css/index.html">CSS教程</a></li>
+                <li><a href="../tutorials/javascript/index.html">JavaScript教程</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>您的学习进度：</h2>
+        <ul id="progress-list">
+            <!-- 动态生成进度列表 -->
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 网页开发学习</p>
+    </footer>
+    <script>
+        const progressData = [
+            { id: 'html-basics', title: 'HTML 基础教程' },
+            { id: 'html-forms', title: 'HTML 表单教程' },
+            { id: 'css-basics', title: 'CSS 基础教程' },
+            { id: 'css-layouts', title: 'CSS 布局教程' },
+            { id: 'js-basics', title: 'JavaScript 基础教程' },
+            { id: 'js-events', title: 'JavaScript 事件处理' },
+            { id: 'js-ajax', title: 'JavaScript AJAX教程' }
+        ];
+
+        const completedChapters = JSON.parse(localStorage.getItem('completedChapters')) || [];
+        const progressList = document.getElementById('progress-list');
+
+        progressData.forEach(chapter => {
+            const li = document.createElement('li');
+            li.textContent = chapter.title;
+            li.style.color = completedChapters.includes(chapter.id) ? 'green' : 'red';
+            progressList.appendChild(li);
+        });
+    </script>
+</body>
+</html>

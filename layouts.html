@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 布局教程 | WebDev Learning</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+</head>
+<body>
+    <!-- 头部导航省略 -->
+
+    <main>
+        <h1>CSS 布局教程</h1>
+        <p>在本教程中，我们将介绍 CSS 布局的不同方法，包括块级布局、内联布局、弹性布局和网格布局，以及响应式布局的实现。</p>
+
+        <section>
+            <h2>块级布局</h2>
+            <p>块级元素是独占一行的元素，如 <code>&lt;div&gt;</code>、<code>&lt;p&gt;</code> 和 <code>&lt;h1&gt;</code> 等。它们的宽度默认为父元素的 100%。</p>
+
+            <h4>步骤：</h4>
+            <ol>
+                <li>创建一个包含块级元素的 HTML 文件。</li>
+                <li>在 CSS 中设置块级元素的样式，定义宽度和外边距。</li>
+                <li>查看效果，调整样式以满足需求。</li>
+            </ol>
+
+            <h4>示例代码</h4>
+            <pre><code>
+/* 块级布局示例 */
+.block {
+    width: 100%;            /* 100% 宽度 */
+    background-color: lightblue;
+    margin: 10px 0;        /* 上下间距 */
+}
+            </code></pre>
+            <h3>扩展阅读：</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Block_and_inline_elements" target="_blank">MDN Web Docs - Block and Inline Elements</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>内联布局</h2>
+            <p>内联元素不会独占一行，如 <code>&lt;span&gt;</code>、<code>&lt;strong&gt;</code> 和 <code>&lt;a&gt;</code>。内联元素的宽度仅根据内容的宽度来决定。</p>
+
+            <h4>步骤：</h4>
+            <ol>
+                <li>在 HTML 文件中添加内联元素。</li>
+                <li>通过 CSS 设置内联元素的样式，使用 <code>display: inline;</code>。</li>
+                <li>观察内联元素的排列效果，并调整外边距和填充。</li>
+            </ol>
+
+            <h4>示例代码</h4>
+            <pre><code>
+/* 内联布局示例 */
+.inline {
+    display: inline;        /* 设置为内联 */
+    background-color: yellow;
+    margin: 5px;           /* 外边距 */
+}
+            </code></pre>
+            <h3>扩展阅读：</h3>
+            <ul>
+                <li><a href="https://www.w3schools.com/css/css_display_visibility.asp" target="_blank">W3Schools - CSS Display</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>弹性布局（Flexbox）</h2>
+            <p>弹性布局是一种用于创建一维布局的方法，可以在父元素和子元素之间灵活调整空间。使用 <code>display: flex;</code> 来启用弹性布局。</p>
+
+            <h4>步骤：</h4>
+            <ol>
+                <li>在 HTML 中创建一个包含子元素的容器。</li>
+                <li>在 CSS 中将容器的 <code>display</code> 属性设置为 <code>flex</code>。</li>
+                <li>调整子元素的 <code>flex</code> 属性以实现所需的布局效果。</li>
+            </ol>
+
+            <h4>示例代码</h4>
+            <pre><code>
+/* 弹性布局示例 */
+.container {
+    display: flex;                      /* 启用弹性布局 */
+    justify-content: space-between;     /* 子项均匀分布 */
+}
+
+.item {
+    flex: 1;                            /* 每个子项占据相等空间 */
+    margin: 5px;                       /* 子项间距 */
+}
+            </code></pre>
+            <h3>扩展阅读：</h3>
+            <ul>
+                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Tricks - A Guide to Flexbox</a></li>
+                <li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Layout_basics/Flexbox" target="_blank">MDN Web Docs - Flexbox</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>网格布局（Grid）</h2>
+            <p>网格布局是一种用于创建二维布局的方法，通过定义行和列的网格来布局元素。使用 <code>display: grid;</code> 来启用网格布局。</p>
+
+            <h4>步骤：</h4>
+            <ol>
+                <li>在 HTML 中创建一个包含多个子元素的网格容器。</li>
+                <li>在 CSS 中将容器的 <code>display</code> 属性设置为 <code>grid</code>。</li>
+                <li>定义网格的行和列，例如使用 <code>grid-template-columns</code> 属性。</li>
+                <li>为每个子元素设置样式并观察效果。</li>
+            </ol>
+
+            <h4>示例代码</h4>
+            <pre><code>
+/* 网格布局示例 */
+.grid-container {
+    display: grid;                     /* 启用网格布局 */
+    grid-template-columns: repeat(3, 1fr); /* 三列布局 */
+    gap: 10px;                        /* 网格间距 */
+}
+
+.grid-item {
+    background-color: lightgreen;     /* 网格项背景颜色 */
+    padding: 20px;                   /* 内边距 */
+}
+            </code></pre>
+            <h3>扩展阅读：</h3>
+            <ul>
+                <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Tricks - A Complete Guide to Grid</a></li>
+                <li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Layout_basics/Grids" target="_blank">MDN Web Docs - CSS Grid Layout</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>响应式布局</h2>
+            <p>响应式布局是指网页能够根据不同设备的屏幕尺寸自适应布局。使用媒体查询可以实现响应式设计。</p>
+
+            <h4>步骤：</h4>
+            <ol>
+                <li>在 CSS 文件中添加媒体查询，以根据不同屏幕尺寸设置不同的样式。</li>
+                <li>根据设计需求调整元素的布局方式。</li>
+                <li>在不同设备上测试页面效果，确保响应式布局工作正常。</li>
+            </ol>
+
+            <h4>示例代码</h4>
+            <pre><code>
+/* 媒体查询示例 */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;       /* 在小屏幕上列布局 */
+    }
+}
+            </code></pre>
+            <h3>扩展阅读：</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Media_queries" target="_blank">MDN Web Docs - Media Queries</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- 尾部省略 -->
+</body>
+</html>

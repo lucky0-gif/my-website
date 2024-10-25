@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 响应式设计教程 | WebDev Learning</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+</head>
+<body>
+    <!-- 头部导航省略 -->
+
+    <main>
+        <h1>CSS 响应式设计教程</h1>
+        <p>响应式设计使得网页能够在不同设备和屏幕尺寸下自适应布局。通过使用媒体查询和灵活的布局模型，我们可以创建兼容手机、平板和桌面的网页。</p>
+
+        <section>
+            <h2>响应式设计的基础</h2>
+            <p>响应式设计使用流式网格布局、灵活的图片以及 CSS 媒体查询来实现对不同设备的适配。</p>
+
+            <h4>步骤：</h4>
+            <ol>
+                <li>理解响应式设计的基本概念，包括流式布局和适应性图片。</li>
+                <li>使用 CSS 媒体查询设置不同的样式规则。</li>
+                <li>测试不同设备和屏幕尺寸下的网页效果。</li>
+            </ol>
+
+            <h4>扩展阅读：</h4>
+            <ul>
+                <li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Responsive_design" target="_blank">MDN Web Docs - Responsive Design</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>使用媒体查询</h2>
+            <p>媒体查询允许你在不同的屏幕尺寸或特性下应用不同的 CSS 样式。通过媒体查询，可以为不同的设备定制样式。</p>
+
+            <h4>步骤：</h4>
+            <ol>
+                <li>在 CSS 文件中定义媒体查询，使用 @media 规则。</li>
+                <li>根据设备的宽度、方向和分辨率等条件设置样式。</li>
+                <li>调试和测试在不同设备上的表现。</li>
+            </ol>
+
+            <h4>示例代码</h4>
+            <pre><code>
+/* 媒体查询示例 */
+@media (max-width: 768px) {
+    body {
+        background-color: lightgray;  /* 小屏幕背景颜色 */
+    }
+    .container {
+        flex-direction: column;       /* 列布局 */
+    }
+}
+            </code></pre>
+            <h4>扩展阅读：</h4>
+            <ul>
+                <li><a href="https://css-tricks.com/snippets/css/media-queries-for-standard-devices/" target="_blank">CSS Tricks - Media Queries for Standard Devices</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>流式布局</h2>
+            <p>流式布局使元素的宽度和高度使用百分比单位而非固定的像素值。这样，元素能够根据其父元素的宽度自动调整。</p>
+
+            <h4>步骤：</h4>
+            <ol>
+                <li>使用百分比设置元素的宽度，确保父元素有明确的宽度。</li>
+                <li>使用相对单位（如 em 或 rem）设置字体大小和间距。</li>
+                <li>查看不同屏幕尺寸下的效果，确保流式布局正常工作。</li>
+            </ol>
+
+            <h4>示例代码</h4>
+            <pre><code>
+/* 流式布局示例 */
+.container {
+    width: 80%;             /* 容器宽度为父元素的 80% */
+    margin: 0 auto;        /* 自动水平居中 */
+}
+
+.item {
+    width: 48%;            /* 每个子项宽度为父元素的 48% */
+    margin: 1%;            /* 外边距 */
+}
+            </code></pre>
+            <h4>扩展阅读：</h4>
+            <ul>
+                <li><a href="https://www.smashingmagazine.com/2011/01/what-is-responsive-web-design/" target="_blank">Smashing Magazine - What is Responsive Web Design?</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>灵活的图片</h2>
+            <p>为确保图像在响应式设计中也能够自适应，通常使用 max-width 属性设置最大宽度。</p>
+
+            <h4>步骤：</h4>
+            <ol>
+                <li>在 CSS 中设置图片的最大宽度为 100%。</li>
+                <li>确保图片能够根据其父元素的宽度自动缩放。</li>
+                <li>测试不同设备下的图片效果，确保没有失真。</li>
+            </ol>
+
+            <h4>示例代码</h4>
+            <pre><code>
+/* 灵活的图片示例 */
+img {
+    max-width: 100%;       /* 确保图片不会超出父元素 */
+    height: auto;          /* 高度自动调整 */
+}
+            </code></pre>
+            <h4>扩展阅读：</h4>
+            <ul>
+                <li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Responsive_images" target="_blank">MDN Web Docs - Responsive Images</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>测试和调试响应式设计</h2>
+            <p>通过使用浏览器的开发者工具，学习如何测试和调试响应式设计。可以模拟不同的设备和屏幕尺寸，以确保网页在各种环境中表现良好。</p>
+
+            <h4>步骤：</h4>
+            <ol>
+                <li>在浏览器中打开开发者工具（通常按 F12 键）。</li>
+                <li>切换到设备模拟模式，选择不同的设备进行测试。</li>
+                <li>检查和调整布局，确保所有元素在不同设备上都能正常显示。</li>
+            </ol>
+
+            <h4>扩展阅读：</h4>
+            <ul>
+                <li><a href="https://developers.google.com/web/tools/chrome-devtools/device-mode" target="_blank">Google Developers - Device Mode</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- 尾部省略 -->
+</body>
+</html>

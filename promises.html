@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Promise 教程</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Promise 教程</h1>
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">HTML 教程</a></li>
+                <li><a href="../css/index.html">CSS 教程</a></li>
+                <li><a href="index.html">JavaScript 教程</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>1. 什么是 Promise?</h2>
+            <p>Promise 是 JavaScript 中用于处理异步操作的一种对象，它表示一个可能尚未完成但最终会完成的操作。</p>
+        </section>
+
+        <section>
+            <h2>2. Promise 的状态</h2>
+            <p>Promise 有三种状态：</p>
+            <ul>
+                <li><strong>Pending</strong>（待定）：初始状态，既不是成功，也不是失败。</li>
+                <li><strong>Fulfilled</strong>（已兑现）：操作成功完成。</li>
+                <li><strong>Rejected</strong>（已拒绝）：操作失败。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. 创建 Promise</h2>
+            <p>使用 <code>new Promise</code> 构造函数创建 Promise 对象：</p>
+            <pre><code>const myPromise = new Promise((resolve, reject) => {
+    const success = true; // 模拟操作结果
+
+    if (success) {
+        resolve("操作成功！");
+    } else {
+        reject("操作失败！");
+    }
+});</code></pre>
+        </section>
+
+        <section>
+            <h2>4. 使用 Promise</h2>
+            <p>使用 <code>.then()</code> 和 <code>.catch()</code> 方法处理 Promise 的结果：</p>
+            <pre><code>myPromise
+    .then(result => {
+        console.log(result); // 处理成功结果
+    })
+    .catch(error => {
+        console.error(error); // 处理失败结果
+    });</code></pre>
+        </section>
+
+        <section>
+            <h2>5. Promise 的链式调用</h2>
+            <p>可以将多个 Promise 进行链式调用：</p>
+            <pre><code>const promise1 = new Promise((resolve) => {
+    setTimeout(() => resolve("第一个 Promise 完成"), 1000);
+});
+
+const promise2 = new Promise((resolve) => {
+    setTimeout(() => resolve("第二个 Promise 完成"), 500);
+});
+
+promise1
+    .then(result1 => {
+        console.log(result1);
+        return promise2;
+    })
+    .then(result2 => {
+        console.log(result2);
+    });</code></pre>
+        </section>
+
+        <section>
+            <h2>6. Promise.all() 方法</h2>
+            <p>使用 <code>Promise.all()</code> 方法并行执行多个 Promise，并在所有 Promise 完成后处理结果：</p>
+            <pre><code>Promise.all([promise1, promise2])
+    .then(results => {
+        console.log("所有 Promise 完成:", results);
+    })
+    .catch(error => {
+        console.error("其中一个 Promise 失败:", error);
+    });</code></pre>
+        </section>
+
+        <section>
+            <h2>7. 扩展阅读</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise">MDN Promise 文档</a></li>
+                <li><a href="https://javascript.info/promise-basics">JavaScript.info Promise 基础</a></li>
+                <li><a href="https://www.w3schools.com/js/js_promise.asp">W3Schools Promise 介绍</a></li>
+                <li><a href="https://www.promise.guide/">Promise 详解指南</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 网页开发学习</p>
+    </footer>
+</body>
+</html>

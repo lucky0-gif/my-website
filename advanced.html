@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 高级教程 | WebDev Learning</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <!-- 头部导航省略 -->
+
+    <main>
+        <h1>HTML 高级教程</h1>
+        <p>在本教程中，我们将深入探讨 HTML 的高级特性和应用，帮助你掌握更复杂的 HTML 技巧和前端开发实践。</p>
+
+        <section>
+            <h2>语义化 HTML</h2>
+            <p>语义化 HTML 使用能够表达其含义的标签，可以提升页面的可读性、可维护性以及搜索引擎优化（SEO）。</p>
+            <p>常用的语义化标签包括：</p>
+            <ul>
+                <li><code>&lt;header&gt;</code>: 定义文档的头部区域。</li>
+                <li><code>&lt;footer&gt;</code>: 定义文档的底部区域。</li>
+                <li><code>&lt;article&gt;</code>: 定义独立的内容部分。</li>
+                <li><code>&lt;section&gt;</code>: 定义文档中的章节。</li>
+                <li><code>&lt;nav&gt;</code>: 定义导航链接的部分。</li>
+            </ul>
+            <p>使用这些标签有助于搜索引擎理解网页的结构，从而提高排名。</p>
+
+            <h3>步骤示例：使用语义化标签构建网页</h3>
+            <ol>
+                <li>在 HTML 文件中，添加 <code>&lt;header&gt;</code> 标签并包含网站标题。</li>
+                <li>使用 <code>&lt;nav&gt;</code> 标签为网页添加导航菜单。</li>
+                <li>使用 <code>&lt;article&gt;</code> 标签为主要内容部分创建独立的文章。</li>
+                <li>最后，添加 <code>&lt;footer&gt;</code> 标签，包含版权信息。</li>
+            </ol>
+            <pre><code>
+&lt;header&gt;
+    &lt;h1&gt;我的网站&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#section1"&gt;章节 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;章节 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;article&gt;
+    &lt;h2&gt;标题&lt;/h2&gt;
+    &lt;p&gt;这是一个使用语义化标签构建的示例网页。&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;版权 &copy; 2024&lt;/p&gt;
+&lt;/footer&gt;
+            </code></pre>
+
+            <h4>扩展阅读</h4>
+            <ul>
+                <li><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Semantics" target="_blank">MDN Web Docs: 语义化 HTML</a></li>
+                <li><a href="https://www.w3.org/TR/html52/document-metadata.html#the-header" target="_blank">W3C: HTML5 语义化标签</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>HTML 与 CSS 的结合</h2>
+            <p>了解如何结合 CSS Flexbox 和 Grid 布局创建复杂的网页布局：</p>
+
+            <h3>Flexbox 示例</h3>
+            <p>Flexbox 是一种一维布局模型，适用于一行或一列的布局。</p>
+            <h4>步骤：</h4>
+            <ol>
+                <li>创建一个包含多个子元素的容器。</li>
+                <li>在 CSS 中，将容器的显示属性设置为 <code>flex</code>。</li>
+                <li>使用 <code>justify-content</code> 属性调整子元素的对齐方式。</li>
+            </ol>
+            <pre><code>
+&lt;div class="flex-container"&gt;
+    &lt;div class="flex-item"&gt;项 1&lt;/div&gt;
+    &lt;div class="flex-item"&gt;项 2&lt;/div&gt;
+    &lt;div class="flex-item"&gt;项 3&lt;/div&gt;
+&lt;/div&gt;
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+.flex-item {
+    background-color: lightblue;
+    padding: 20px;
+}
+            </code></pre>
+
+            <h3>Grid 示例</h3>
+            <p>Grid 是一种二维布局模型，适用于复杂的页面布局。</p>
+            <h4>步骤：</h4>
+            <ol>
+                <li>创建一个网格容器，并为其设置 <code>display: grid;</code>。</li>
+                <li>定义列和行的数量，例如：<code>grid-template-columns: repeat(3, 1fr);</code></li>
+                <li>添加子元素，并观察布局变化。</li>
+            </ol>
+            <pre><code>
+&lt;div class="grid-container"&gt;
+    &lt;div class="grid-item"&gt;项 1&lt;/div&gt;
+    &lt;div class="grid-item"&gt;项 2&lt;/div&gt;
+    &lt;div class="grid-item"&gt;项 3&lt;/div&gt;
+&lt;/div&gt;
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.grid-item {
+    background-color: lightgreen;
+    padding: 20px;
+}
+            </code></pre>
+
+            <h4>扩展阅读</h4>
+            <ul>
+                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Tricks: Flexbox 指南</a></li>
+                <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Tricks: Grid 指南</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>无障碍设计（Accessibility）</h2>
+            <p>无障碍设计是确保所有用户（包括残障人士）能够访问和使用你的网页。</p>
+            <h3>步骤：</h3>
+            <ol>
+                <li>为每个交互元素（如按钮和链接）提供描述性的标签。</li>
+                <li>使用 ARIA 属性来增强元素的可访问性。</li>
+                <li>确保所有图片都有替代文本。</li>
+            </ol>
+            <pre><code>
+&lt;button aria-label="关闭"&gt;X&lt;/button&gt;
+&lt;img src="image.jpg" alt="描述性文本"&gt;
+            </code></pre>
+            <p>这样可以确保使用屏幕阅读器的用户能够理解网页内容。</p>
+
+            <h4>扩展阅读</h4>
+            <ul>
+                <li><a href="https://www.w3.org/WAI/tips/designing/" target="_blank">W3C: 无障碍设计技巧</a></li>
+                <li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility" target="_blank">MDN Web Docs: 无障碍设计</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>HTML 与 SEO</h2>
+            <p>使用结构化数据和适当的元标签可以帮助搜索引擎更好地理解你的网页。</p>
+            <h3>步骤：</h3>
+            <ol>
+                <li>在 <code>&lt;head&gt;</code> 部分添加元标签。</li>
+                <li>使用 <code>schema.org</code> 的结构化数据标记。</li>
+                <li>确保使用描述性标题和标题标签。</li>
+            </ol>
+            <pre><code>
+&lt;meta name="description" content="这是一个关于 HTML 高级教程的网页。"&gt;
+&lt;meta name="keywords" content="HTML, 高级, 教程"&gt;
+
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "http://schema.org",
+  "@type": "WebPage",
+  "name": "HTML 高级教程",
+  "description": "深入探讨 HTML 的高级特性和应用。"
+}
+&lt;/script&gt;
+            </code></pre>
+
+            <h4>扩展阅读</h4>
+            <ul>
+                <li><a href="https://moz.com/beginners-guide-to-seo" target="_blank">Moz: SEO 初学者指南</a></li>
+                <li><a href="https://developers.google.com/search/docs/advanced/structured-data" target="_blank">Google: 结构化数据</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>实践案例</h2>
+            <p>通过实际项目来巩固学习内容，以下是一些示例：</p>
+            <ul>
+                <li><a href="../../projects/portfolio.html" target="_blank">个人作品集项目</a></li>
+                <li><a href="../../projects/todo.html" target="_blank">待办事项项目</a></li>
+                <li><a href="../../projects/weather-app.html" target="_blank">天气应用项目</a></li>
+            </ul>
+
+            <h4>扩展阅读</h4>
+            <ul>
+                <li><a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp: 免费编程课程</a></li>
+                <li><a href="https://www.codecademy.com/learn/learn-html" target="_blank">Codecademy: HTML 课程</a></li>
+            </ul>
+        </section>
+    </main>
+
+       <!-- 页面尾部 -->
+       <footer>
+        <p>&copy; 2024 WebDev Learning. 保留所有权利。</p>
+    </footer>
+</body>
+</html>

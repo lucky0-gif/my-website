@@ -1,0 +1,382 @@
+/* 全局样式变量 */
+:root {
+    --primary-color: #3498db;  /* 主色调 */
+    --secondary-color: #2ecc71; /* 辅助色调 */
+    --background-color: #f4f4f4; /* 背景颜色 */
+    --text-color: #333; /* 文字颜色 */
+    --border-color: #ddd; /* 边框颜色 */
+    --header-background: #333; /* 头部背景色 */
+    --footer-background: #333; /* 尾部背景色 */
+    --link-color: #007BFF; /* 链接颜色 */
+    --hover-link-color: #0056b3; /* 悬停链接颜色 */
+    --font-family: 'Arial', sans-serif; /* 字体 */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 阴影 */
+    --border-radius: 8px; /* 边框圆角 */
+}
+
+/* 全局样式 */
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+/* 头部样式 */
+header {
+    background-color: var(--header-background);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* 导航样式 */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 主内容样式 */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--text-color);
+}
+
+/* 头部新风格 */
+.hero-header {
+    background-image: url('../images/hero-bg.jpg'); /* 背景图路径 */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色遮罩层 */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* 教程板块样式 */
+#tutorial-sections {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.tutorial-card {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    width: 30%;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tutorial-card h3 {
+    color: var(--text-color);
+}
+
+.tutorial-card p {
+    color: #666;
+}
+
+.tutorial-card a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tutorial-card a:hover {
+    color: var(--hover-link-color);
+    text-decoration: underline;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 搜索框样式 */
+#search-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.search-box {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    padding: 5px 10px;
+    box-shadow: var(--box-shadow);
+    background-color: white;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 300px;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+.search-box button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.search-box button img {
+    width: 24px;
+    height: 24px;
+}
+
+.search-box input:focus {
+    border: 2px solid var(--primary-color);
+}
+
+.search-box button:hover img {
+    filter: brightness(0.8);
+}
+
+/* 搜索结果样式 */
+#search-results {
+    margin-top: 20px;
+    text-align: left;
+    padding: 20px;
+    max-width: 400px;
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#search-results a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#search-results a:hover {
+    text-decoration: underline;
+}
+
+/* 尾部样式 */
+footer {
+    background-color: var(--footer-background);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
+/* 搜索框样式 */
+#search-section {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.search-box {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 25px; /* 圆角 */
+    padding: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 10px 15px; /* 内边距 */
+    width: 300px;
+    border-radius: 25px; /* 圆角 */
+    font-size: 16px;
+}
+
+.search-box input::placeholder {
+    color: #999; /* 占位符颜色 */
+}
+
+.search-box input:focus {
+    border: 2px solid #007BFF; /* 聚焦时的边框颜色 */
+}
+
+.search-box button {
+    background-color: #007BFF; /* 按钮颜色 */
+    border: none;
+    border-radius: 50%; /* 圆形按钮 */
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 5px;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #0056b3; /* 悬停时的颜色 */
+}
+
+.search-box button img {
+    width: 20px; /* 图标大小 */
+    height: 20px;
+}
+
+/* 搜索框样式 */
+#search-section {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.search-box {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 25px; /* 圆角 */
+    padding: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    width: 300px;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.search-box input::placeholder {
+    color: #999;
+}
+
+.search-box input:focus {
+    border: 2px solid #007BFF; /* 聚焦时的边框颜色 */
+}
+
+.search-box button {
+    background-color: #007BFF;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 5px;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #0056b3; /* 悬停时的颜色 */
+}
+
+.search-box button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* 搜索结果样式 */
+#search-results {
+    margin-top: 20px;
+    text-align: left;
+    padding: 20px;
+    max-width: 400px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* 默认隐藏 */
+}
+
+#search-results a {
+    color: #007BFF;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#search-results a:hover {
+    text-decoration: underline; /* 悬停效果 */
+}
+
+.search-highlight {
+    background-color: yellow; /* 高亮显示搜索关键词 */
+}
+
+
+#search-results a {
+    color: #007BFF; /* 链接颜色 */
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#search-results a:hover {
+    text-decoration: underline; /* 悬停效果 */
+}

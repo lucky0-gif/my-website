@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>联系我们</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="tutorials/html/index.html">HTML 教程</a></li>
+                <li><a href="tutorials/css/index.html">CSS 教程</a></li>
+                <li><a href="tutorials/javascript/index.html">JavaScript 教程</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>通过表单联系我们</h2>
+            <p>如果您有任何问题或反馈，请填写以下表单与我们联系：</p>
+            <form>
+                <label for="name">姓名:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">邮箱:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">您的信息:</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+                <input type="submit" value="提交">
+            </form>
+        </section>
+    </main>
+    <h2>联系我们</h2>
+<form id="feedback-form">
+    <label for="feedback">反馈意见：</label><br>
+    <textarea id="feedback" rows="4" cols="50"></textarea><br>
+    <button type="button" onclick="submitFeedback()">提交反馈</button>
+</form>
+
+<script>
+    function submitFeedback() {
+        const feedback = document.getElementById('feedback').value;
+        alert('感谢您的反馈！');
+        document.getElementById('feedback-form').reset();
+    }
+</script>
+
+    <footer>
+        <p>&copy; 2024 网页开发学习</p>
+    </footer>
+</body>
+</html>

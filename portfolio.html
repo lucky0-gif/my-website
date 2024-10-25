@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习进度</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>学习进度</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../contact.html">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>你的学习进度</h2>
+            <p>你可以在这里跟踪你学习的课程和进度。</p>
+            <ul id="progressList">
+                <!-- 这里将动态显示学习进度 -->
+            </ul>
+            <button id="saveProgress">保存进度</button>
+        </section>
+    </main>
+    <h2>个人作品集项目</h2>
+<p>这个项目将教你如何创建一个简单但专业的个人作品集页面。</p>
+
+<h3>项目步骤：</h3>
+<ol>
+    <li>创建基本的 HTML 结构。</li>
+    <li>添加个人简介部分。</li>
+    <li>展示项目作品，使用 CSS 格式化展示效果。</li>
+</ol>
+
+<h3>实时代码编辑器：</h3>
+<textarea id="code-editor">// 在这里输入您的 HTML 代码</textarea>
+<button onclick="runCode()">运行代码</button>
+<iframe id="output" style="width:100%; height:300px;"></iframe>
+
+<script>
+    const editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+        lineNumbers: true,
+        mode: "text/html"
+    });
+
+    function runCode() {
+        const output = document.getElementById('output');
+        output.srcdoc = editor.getValue();
+    }
+</script>
+
+    <footer>
+        <p>&copy; 2024 网页开发教程</p>
+    </footer>
+    <script src="../assets/js/scripts.js"></script>
+</body>
+</html>
